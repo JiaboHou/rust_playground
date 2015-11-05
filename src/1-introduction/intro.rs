@@ -28,7 +28,7 @@ fn ex1_1() {
     // y is a copy of x's first element.
     let y = x[0].clone();
 
-    x.push("foo"); // COMPILER ERROR
+    x.push("foo");
 
 }
 
@@ -41,5 +41,5 @@ fn ex1_2() {
         let y = &x[0];
     }
     // y is now out of scope.
-    x.push("foo"); // COMPILER ERROR
+    x.push("foo");
 }
