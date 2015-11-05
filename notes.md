@@ -12,7 +12,7 @@
 
 # Mutation
     - Variable bindings are immutable by default
-    - "mut" makes bindings mutable. (e.g. "mut x")
+    - "mut" makes bindings mutable. (e.g. "let mut x")
 
 # Typing
     - Static type, with type inference. No need to annotate the type.
@@ -26,3 +26,9 @@
     - variable bindings "own" their value.
     - When a variable binding goes out of scope, the value it owned is de-allocated from memory.
     - This is deterministic, not through GC. (no need for malloc or free)
+
+# References
+    - immutable by default.
+
+# Error Handling
+    - Rust handles throwing exceptions by returning them, in a Result container. This Result type encodes error handling information.
