@@ -32,3 +32,24 @@
 
 # Error Handling
     - Rust handles throwing exceptions by returning them, in a Result container. This Result type encodes error handling information.
+
+# Arc<T>
+    - atomic reference count: Automatically keeps track of the number of references of the binding across multiple threads.
+
+# Mutex
+    - Used to control concurrency. Only one thread can access the contents of a Mutex at any given time.
+
+# Foreign Function Interface (FFI)
+    - Often times a programming language is weak in runtime performance, with the trade off of providing more convenience and productivity. To help mitigate the slower runtime, we can write some of a system in C and have a higher-level language call that C code.
+    - Rust has bi-directional support for FFI. It can call into C code easily, and more importantly, have C code call into Rust.
+
+# Concurrency
+    - Dealing with concurrency is where Rust shines. Many languages, place numbers on the heap, rather than on the stack (esp. OOP and languages with GC. Granted some optimizations can stack allocate).
+    - Some languages may have a "global interpreter lock" (GIL) which limits concurrency in many situations, for safety's sake.
+
+# Cargo.toml
+    - To compile a library into a standard dynamic library, do:
+        '[lib]
+        name = "embed"
+        crate-type = ["dylib"]'
+    - Rust creates rlib's by default.
