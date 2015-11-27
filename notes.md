@@ -53,3 +53,41 @@
         name = "embed"
         crate-type = ["dylib"]'
     - Rust creates rlib's by default.
+
+# Return code
+"$ echo $?" prints the status code. (Useful for integrating "cargo test" into other tooling.)
+
+# Testing
+## Unit Tests
+Grouping tests: mod tests {}
+Asserts: assert!(exp), assert_eq!(x, y);
+Test: #[test]
+Negative test: #[should_panic(expected = "msg to expect upon panic")]
+Ignore a test: #[ignore]
+## Integration Tests
+Located in a separate "tests" dir, need to import the crate you are testing.
+## Documentation Tests
+When you use examples in your documentation, make sure they actually work when you update your code.
+Use //! for module-level documentation, /// for function-level documentation
+
+# Conditional Compilation
+Rust has an attribute "#[cfg]" which allows for conditional compilation.
+Examples:
+    - #[cfg(foo)]
+    - #[cfg(bar = "baz")]
+    - #[cfg(any(not(unix), all(target_os="macos", target_arch="powerpc")))]
+
+These switches can be enabled/disabled in the features section of the Cargo.toml. When you specify a feature, it is passed in as a flag to rustc:
+```
+--cfg feature="${feature_name}"
+```
+
+# Iterators
+## Relevant Definitions:
+ - iterator: provides a sequence of values
+ - iterator adapter: uses iterators to produce other iterators
+ - consumers: uses iterators to produce the final set of values
+
+# Concurrency
+Rust has a concept of "safe shared mutable state"
+"Shared mutable state is the root of all evil. Most languages attempt to deal with this problem through the 'mutable' part, but Rust deals with it by solving the 'shared' part."

@@ -1,0 +1,12 @@
+[package]
+name = "adder"
+version = "0.1.0"
+authors = ["Jiabo Hou <jiabo.hou@hotmail.com>"]
+
+[features]
+# no features by default
+default = []
+
+
+# The "secure-password" feature depends on the bcrypt package.
+# secure-password = ["bcrypt"]
