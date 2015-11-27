@@ -81,3 +81,13 @@ These switches can be enabled/disabled in the features section of the Cargo.toml
 ```
 --cfg feature="${feature_name}"
 ```
+
+# Iterators
+## Relevant Definitions:
+ - iterator: provides a sequence of values
+ - iterator adapter: uses iterators to produce other iterators
+ - consumers: uses iterators to produce the final set of values
+
+# Concurrency
+Rust has a concept of "safe shared mutable state"
+"Shared mutable state is the root of all evil. Most languages attempt to deal with this problem through the 'mutable' part, but Rust deals with it by solving the 'shared' part."
